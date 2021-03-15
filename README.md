@@ -1,6 +1,6 @@
-# @/scte35
+# @/st2010
 
-[![npm](https://img.shields.io/npm/v/@astronautlabs/scte35)](https://npmjs.com/package/@astronautlabs/scte35)
-[![CircleCI](https://circleci.com/gh/astronautlabs/scte35.svg?style=svg)](https://circleci.com/gh/astronautlabs/scte35)
+[![npm](https://img.shields.io/npm/v/@astronautlabs/st2010)](https://npmjs.com/package/@astronautlabs/st2010)
 
-Implements the SCTE-35 standard for representing digital program insertion cues.
+Implements ST 2010 ancillary data
+
