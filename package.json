@@ -5,17 +5,16 @@
     "access": "public"
   },
   "version": "0.0.1",
-  "description": "Implements the ST 291 ancillary data syntax",
+  "description": "Implements the ST 2010 ancillary data syntax",
   "main": "dist/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
-  "typings": "./dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "test": "npm run build && node dist/test",
-    "parse": "node ./scripts/cli.js",
     "build": "npm run clean && tsc",
     "prepublishOnly": "npm test"
   },
