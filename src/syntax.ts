@@ -6,6 +6,9 @@ import { Field, Marker, Reserved } from "@astronautlabs/bitstream";
 import * as SCTE104 from "@astronautlabs/scte104";
 import * as ST291 from "@astronautlabs/st291";
 
+export interface PacketizationOptions {
+    duplicate? : boolean;
+}
 export class Packet extends ST291.Packet {
     @Reserved(3) reserved;
     @Field(2, { writtenValue: 1 }) version = 1;
@@ -20,7 +23,7 @@ export class Packet extends ST291.Packet {
     }) 
     payload : Buffer;
 
-    static packetize(message : SCTE104.elements.Message): Packet[] {
+    static packetize(message : SCTE104.elements.Message, options : PacketizationOptions): Packet[] {
         let payload = message.serialize();
         let packetSize = 254;
 
@@ -42,7 +45,7 @@ export class Packet extends ST291.Packet {
                     sdid: 0x07,
                     continued: sent > 0,
                     following: sent + size <= payload.length,
-                    duplicate: false,
+                    duplicate: options?.duplicate || false,
                     payload: payload.slice(sent, packetSize),
                 }
             ));
