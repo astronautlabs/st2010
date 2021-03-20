@@ -23,7 +23,7 @@ export class Packet extends ST291.Packet {
     }) 
     payload : Buffer;
 
-    static packetize(message : SCTE104.elements.Message, options : PacketizationOptions): Packet[] {
+    static packetize(message : SCTE104.elements.Message, options? : PacketizationOptions): Packet[] {
         let payload = message.serialize();
         let packetSize = 254;
 
