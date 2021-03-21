@@ -58,7 +58,7 @@ export class Packet extends ST291.Packet {
                     continued: sent > 0,
                     following: sent + size < payload.length,
                     duplicate: options?.duplicate || false,
-                    payload: payload.slice(sent, size),
+                    payload: payload.slice(sent, sent + size),
                 }
             ));
 
