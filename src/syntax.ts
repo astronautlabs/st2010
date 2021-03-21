@@ -6,11 +6,6 @@ import { Field, Marker, Reserved } from "@astronautlabs/bitstream";
 import * as SCTE104 from "@astronautlabs/scte104";
 import * as ST291 from "@astronautlabs/st291";
 
-function report(message, value) {
-    console.log(`${message}: ${value}`);
-    return value;
-}
-
 export interface PacketizationOptions {
     duplicate? : boolean;
 }
@@ -34,7 +29,7 @@ export class Packet extends ST291.Packet {
     @Marker() $payloadDescriptorEnd;
     @Marker() $payloadMark;
 
-    @Field((i : Packet) => report('MEASUREMENT', i.payload?.length ?? (i.userDataCount - i.measure(i => i.$userDataStart, i => i.$payloadMark) / 8)), {
+    @Field((i : Packet) => i.payload?.length ?? (i.userDataCount - i.measure(i => i.$userDataStart, i => i.$payloadMark) / 8), {
         serializer: new ST291.Serializer(),
         buffer: { truncate: false }
     }) 
