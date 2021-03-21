@@ -29,7 +29,7 @@ export class Packet extends ST291.Packet {
     @Marker() $payloadDescriptorEnd;
     @Marker() $payloadMark;
 
-    @Field((i : Packet) => i.measure(i => i.$payloadMark, i => i.$userDataEnd) / 8, {
+    @Field((i : Packet) => i.userDataCount - i.measure(i => i.$userDataStart, i => i.$payloadMark) / 8, {
         serializer: new ST291.Serializer()
     }) 
     payload : Buffer;
