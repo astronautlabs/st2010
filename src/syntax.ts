@@ -10,12 +10,23 @@ export interface PacketizationOptions {
     duplicate? : boolean;
 }
 export class Packet extends ST291.Packet {
+
+    @Field(2, { 
+        writtenValue: i => ST291.parity(
+            i.serialize(i => i.$payloadDescriptorStart, i => i.$payloadDescriptorEnd)[0]
+        ) 
+    }) 
+    payloadDescriptorParity : number;
+
+    @Marker() $payloadDescriptorStart;
+
     @Reserved(3) reserved;
     @Field(2, { writtenValue: 1 }) version = 1;
     @Field(1) continued : boolean;
     @Field(1) following : boolean;
     @Field(1) duplicate : boolean;
 
+    @Marker() $payloadDescriptorEnd;
     @Marker() $payloadMark;
 
     @Field((i : Packet) => i.measure(i => i.$payloadMark, i => i.$userDataEnd) / 8, {
