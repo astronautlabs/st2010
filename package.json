@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Implements the ST 2010 ancillary data syntax",
   "main": "dist/index.js",
   "directories": {
