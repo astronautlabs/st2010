@@ -1,6 +1,7 @@
 # @/st2010
 
 [![npm](https://img.shields.io/npm/v/@astronautlabs/st2010)](https://npmjs.com/package/@astronautlabs/st2010)
+[![CircleCI](https://circleci.com/gh/astronautlabs/st2010.svg?style=svg)](https://circleci.com/gh/astronautlabs/st2010)
 
 > **[📜 ST 2010:2008](https://ieeexplore.ieee.org/document/7291860)**  
 > Vertical Ancillary Data Mapping of ANSI/SCTE 104 Messages
