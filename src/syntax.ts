@@ -10,8 +10,15 @@ export interface PacketizationOptions {
     duplicate? : boolean;
 }
 
-@Variant(i => i.did == 0x41 && i.sdid == 0x07)
+export const DID = 0x41;
+export const SDID = 0x07;
+@Variant(i => i.did == DID && i.sdid == SDID)
 export class Packet extends ST291.Packet {
+    constructor() {
+        super();
+        this.did = DID;
+        this.sdid = SDID;
+    }
 
     @Field(2, { 
         writtenValue: i => ST291.parity(
@@ -36,6 +43,11 @@ export class Packet extends ST291.Packet {
         buffer: { truncate: false }
     }) 
     payload : Buffer;
+
+    static async depacketize(packets : Packet[]) {
+        let buf = Buffer.concat(packets.map(x => x.payload));
+        return await SCTE104.elements.Message.deserialize(buf);
+    }
 
     static packetize(message : SCTE104.elements.Message, options? : PacketizationOptions): Packet[] {
         let payload = message.serialize();
