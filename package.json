@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@astronautlabs/bitstream": "^0.0.27",
-    "@astronautlabs/scte104": "0.0.14",
+    "@astronautlabs/scte104": "^0.0.15",
     "@astronautlabs/st291": "^0.0.13"
   }
 }
