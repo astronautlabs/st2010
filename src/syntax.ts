@@ -2,13 +2,15 @@
  * © 2021 Astronaut Labs, LLC.
  */
 
-import { Field, Marker, Reserved } from "@astronautlabs/bitstream";
+import { Field, Marker, Reserved, Variant } from "@astronautlabs/bitstream";
 import * as SCTE104 from "@astronautlabs/scte104";
 import * as ST291 from "@astronautlabs/st291";
 
 export interface PacketizationOptions {
     duplicate? : boolean;
 }
+
+@Variant(i => i.did == 0x41 && i.sdid == 0x07)
 export class Packet extends ST291.Packet {
 
     @Field(2, { 
