@@ -6,9 +6,8 @@
 > **[📜 ST 2010:2008](https://ieeexplore.ieee.org/document/7291860)**  
 > Vertical Ancillary Data Mapping of ANSI/SCTE 104 Messages
 
-> 📝 **Beta Quality**  
-> This library is new, with limited compatibility guarantees between 
-> releases (beta, semver 0.x.x).
+> ✅ **Release Quality**  
+> This library is ready for production
 
 > 📺 Part of the **Astronaut Labs Broadcast Suite**  
 > [@/rfc8331](https://github.com/astronautlabs/rfc8331) |
