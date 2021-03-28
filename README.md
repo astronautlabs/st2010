@@ -6,7 +6,7 @@
 > Vertical Ancillary Data Mapping of ANSI/SCTE 104 Messages
 
 > 📝 **Beta Quality**  
-> This library is new, no compatibility is currently guaranteed between 
+> This library is new, with limited compatibility guarantees between 
 > releases (beta, semver 0.x.x).
 
 An implementation of ST 2010 in Typescript
