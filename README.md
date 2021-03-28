@@ -10,4 +10,17 @@
 > This library is new, with limited compatibility guarantees between 
 > releases (beta, semver 0.x.x).
 
-An implementation of ST 2010 in Typescript
+> 📺 Part of the **Astronaut Labs Broadcast Suite**  
+> [@/rfc8331](https://github.com/astronautlabs/rfc8331) |
+> [@/scte104](https://github.com/astronautlabs/scte104) | 
+> [@/scte35](https://github.com/astronautlabs/scte35) | 
+> [@/st2010](https://github.com/astronautlabs/st2010) | 
+> [@/st291](https://github.com/astronautlabs/st291)
+
+---
+
+Implementation of ST 2010 in Typescript using [@astronautlabs/bitstream](https://github.com/astronautlabs/bitstream)
+
+## Summary
+
+ST 2010 specifies how to encode digital cuepoint insertion messages (as defined in SCTE 104) alongside video essence transmitted via Serial Digital Interface (SDI) or a related medium.
