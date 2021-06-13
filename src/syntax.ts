@@ -29,7 +29,7 @@ export class Packet extends ST291.Packet {
 
     @Marker() $payloadDescriptorStart;
 
-    @Reserved(3) reserved;
+    @Reserved(3, { writtenValue: 0 }) reserved = 0;
     @Field(2, { writtenValue: 1 }) version : number = 1;
     @Field(1) continued : boolean;
     @Field(1) following : boolean;
