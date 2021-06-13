@@ -2,7 +2,7 @@
  * © 2021 Astronaut Labs, LLC.
  */
 
-import { Field, Marker, Reserved, Variant } from "@astronautlabs/bitstream";
+import { Field, Marker, Reserved, ReservedLow, Variant } from "@astronautlabs/bitstream";
 import * as SCTE104 from "@astronautlabs/scte104";
 import * as ST291 from "@astronautlabs/st291";
 
@@ -29,7 +29,7 @@ export class Packet extends ST291.Packet {
 
     @Marker() $payloadDescriptorStart;
 
-    @Reserved(3, { writtenValue: 0 }) reserved = 0;
+    @ReservedLow(3, { writtenValue: 0 }) reserved = 0;
     @Field(2, { writtenValue: 1 }) version : number = 1;
     @Field(1) continued : boolean;
     @Field(1) following : boolean;
@@ -42,7 +42,7 @@ export class Packet extends ST291.Packet {
         serializer: new ST291.Serializer(),
         buffer: { truncate: false }
     }) 
-    payload : Buffer;
+    payload : Buffer | Uint8Array;
 
     static async depacketize(packets : Packet[]) {
         let buf = Buffer.concat(packets.map(x => x.payload));
