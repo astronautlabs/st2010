@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/astronautlabs/st291.git"
+    "url": "git+https://github.com/astronautlabs/st2010.git"
   },
   "author": "Astronaut Labs, LLC",
   "contributors": [
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/astronautlabs/st291/issues"
+    "url": "https://github.com/astronautlabs/st2010/issues"
   },
-  "homepage": "https://github.com/astronautlabs/st291#readme",
+  "homepage": "https://github.com/astronautlabs/st2010#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/node": "^10.12.17",
@@ -47,6 +47,6 @@
   "dependencies": {
     "@astronautlabs/bitstream": "^2.1.0",
     "@astronautlabs/scte104": "^0.3.0",
-    "@astronautlabs/st291": "^2.0.1"
+    "@astronautlabs/st291": "^2.0.2"
   }
 }
